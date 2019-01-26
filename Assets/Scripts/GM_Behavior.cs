@@ -4,24 +4,80 @@ using UnityEngine;
 
 public class GM_Behavior : MonoBehaviour
 {
+
+    private int rayDist = 30;
+
     public Camera Cam;
+
+    private GameObject lastInteracted;
+
+    private RaycastHit hit;
+    private Ray ray;
+
+    public enum Minigames
+    {
+        None,
+        Dishes,
+        Cleaning,
+    }
+
+    public Minigames currentMG;
 
     void Start()
     {
-        
+        Cam = Camera.main;
     }
 
 
     void Update()
     {
-            RaycastHit hit ;
-            Ray ray = Cam.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hit, 100.0f ))
+    }
+
+    void FixedUpdate()
+    {
+        MonitorMousePos();
+    }
+
+    private void MonitorMousePos()
+    {
+        Debug.DrawLine(ray.origin, ray.GetPoint(rayDist), Color.blue);
+        ray = Cam.ScreenPointToRay(Input.mousePosition);
+
+        if (currentMG == Minigames.None)
+        {
+            if (Physics.Raycast(ray, out hit, rayDist))
             {
-                print(hit.collider);
-                Debug.DrawLine(ray.origin, ray.GetPoint(100), Color.blue);
+                if (Input.GetKeyDown(KeyCode.Mouse0))
+                {
+                    print(hit.collider);
 
+                    if (lastInteracted)
+                    {
+                        lastInteracted.SendMessage("Deselect");
+                    }
+
+                    lastInteracted = hit.collider.gameObject;
+                    lastInteracted.SendMessage("OnSelected");
+                }
             }
+        }
+
+        if (currentMG == Minigames.Dishes)
+        {
+            if (Physics.Raycast(ray, out hit, rayDist))
+            {
+                if (Input.GetKey(KeyCode.Mouse0))
+                {
+                    print(hit.collider);
+
+                    if (hit.collider.tag == "Dishes")
+                    {
+                        hit.collider.gameObject.SendMessage("Clean");
+                    }
+                }
+            }
+        }
+
     }
 }

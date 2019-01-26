@@ -5,6 +5,7 @@ using UnityEngine;
 public class InteractablesBase : MonoBehaviour
 {
     private bool isActivated = false;
+    private bool isFinished = false;
     private bool minigame;
 
     private GameObject GM;
@@ -31,11 +32,13 @@ public class InteractablesBase : MonoBehaviour
     public virtual void OnSelected()
     {
         isActivated = true;
+        print("Active!");
     }
 
     public virtual void Deselect()
     {
         isActivated = false;
+        print("Deactivated");
     }
 
     public virtual void Interact()
