@@ -12,6 +12,7 @@ public class Wall : MonoBehaviour
         renderer = GetComponent<Renderer>();
     }
 
+    //Use the camera occluder to enable/disable visual for the wall so that the walls don't get in the way of the camera
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Occluder") {

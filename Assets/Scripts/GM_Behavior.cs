@@ -19,6 +19,7 @@ public class GM_Behavior : MonoBehaviour
         None,
         Dishes,
         Cleaning,
+        Picture
     }
 
     public Minigames currentMG;
@@ -77,6 +78,10 @@ public class GM_Behavior : MonoBehaviour
                     }
                 }
             }
+        }
+        else if (currentMG== Minigames.Picture)
+        {
+            
         }
 
     }

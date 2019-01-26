@@ -1,31 +1,27 @@
 fileFormatVersion: 2
-guid: 76debfdd144d4fd479cb34b24df36509
+guid: 9a0e260741a704243aa1c5181fcc6c90
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Circle_001
-    100002: Circle_002
-    100004: Circle_003
-    100006: Circle_004
-    100008: //RootNode
-    400000: Circle_001
-    400002: Circle_002
-    400004: Circle_003
-    400006: Circle_004
-    400008: //RootNode
+    100000: Cube
+    100002: Cube_001
+    100004: Cube_002
+    100006: //RootNode
+    400000: Cube
+    400002: Cube_001
+    400004: Cube_002
+    400006: //RootNode
     2100000: unnamed
-    2300000: Circle_001
-    2300002: Circle_002
-    2300004: Circle_003
-    2300006: Circle_004
-    3300000: Circle_001
-    3300002: Circle_002
-    3300004: Circle_003
-    3300006: Circle_004
-    4300000: Circle_004
-    4300002: Circle_003
-    4300004: Circle_002
-    4300006: Circle_001
+    2100002: Material
+    2300000: Cube
+    2300002: Cube_001
+    2300004: Cube_002
+    3300000: Cube
+    3300002: Cube_001
+    3300004: Cube_002
+    4300000: Cube_002
+    4300002: Cube_001
+    4300004: Cube
     7400000: Default Take
     9500000: //RootNode
   externalObjects: {}

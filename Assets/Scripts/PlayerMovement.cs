@@ -8,13 +8,12 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask navMeshMask;
     NavMeshAgent agent;
 
-    // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();   
     }
 
-    // Update is called once per frame
+    //Raycast at the mouse position, grabbing only colliders assigned to the navmesh layer
     void Update()
     {
         if(Input.GetMouseButtonDown(0))
@@ -22,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
             RaycastHit[] hits = Physics.RaycastAll(Camera.main.ScreenPointToRay(Input.mousePosition), 100f, navMeshMask);
             for(int i = 0; i < hits.Length; i++)
             {
+                //Set the destination for our agent to go
                 agent.SetDestination(hits[i].point);
             }
         }
