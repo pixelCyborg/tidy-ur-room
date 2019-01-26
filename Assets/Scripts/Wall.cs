@@ -14,7 +14,6 @@ public class Wall : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Trigger start!");
         if(other.tag == "Occluder") {
             renderer.enabled = false;
         }
@@ -22,7 +21,6 @@ public class Wall : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Trigger exited");
         if(other.tag == "Occluder") {
             renderer.enabled = true;
         }

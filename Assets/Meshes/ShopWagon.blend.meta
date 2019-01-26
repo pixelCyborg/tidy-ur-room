@@ -1,0 +1,216 @@
+fileFormatVersion: 2
+guid: 12d00da23a1ce8f468369f703243224f
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Cone_001
+    100002: Crystal_Ball
+    100004: Crystal_Ball_Holder
+    100006: Cube
+    100008: Cube_001
+    100010: Cube_002
+    100012: Cube_003
+    100014: Cylinder
+    100016: Cylinder_001
+    100018: Cylinder_002
+    100020: Cylinder_003
+    100022: Cylinder_004
+    100024: Cylinder_005
+    100026: Lantern
+    100028: Lantern_001
+    100030: Lantern_002
+    100032: Potion
+    100034: Potion_002
+    100036: Potion_005
+    100038: //RootNode
+    100040: Sphere
+    100042: Sphere_001
+    100044: Wagon
+    400000: Cone_001
+    400002: Crystal_Ball
+    400004: Crystal_Ball_Holder
+    400006: Cube
+    400008: Cube_001
+    400010: Cube_002
+    400012: Cube_003
+    400014: Cylinder
+    400016: Cylinder_001
+    400018: Cylinder_002
+    400020: Cylinder_003
+    400022: Cylinder_004
+    400024: Cylinder_005
+    400026: Lantern
+    400028: Lantern_001
+    400030: Lantern_002
+    400032: Potion
+    400034: Potion_002
+    400036: Potion_005
+    400038: //RootNode
+    400040: Sphere
+    400042: Sphere_001
+    400044: Wagon
+    2100000: unnamed
+    2100002: Storage
+    2100004: Wood_Framing
+    2100006: Roof_Canvas
+    2100008: Wood_Planks
+    2100010: Storage__TexturesCom_Roofing_PantileOld_1K_albedo_tif
+    2100012: Ropy__TexturesCom_Roofing_PantileOld_1K_albedo_tif
+    2100014: Door
+    2100016: Axel_Metal
+    2100018: Potion
+    2100020: Material
+    2300000: Cone_001
+    2300002: Crystal_Ball
+    2300004: Crystal_Ball_Holder
+    2300006: Cube
+    2300008: Cube_001
+    2300010: Cube_002
+    2300012: Cube_003
+    2300014: Cylinder
+    2300016: Cylinder_001
+    2300018: Cylinder_002
+    2300020: Cylinder_003
+    2300022: Cylinder_004
+    2300024: Cylinder_005
+    2300026: Lantern
+    2300028: Lantern_001
+    2300030: Lantern_002
+    2300032: Potion
+    2300034: Potion_002
+    2300036: Potion_005
+    2300038: Sphere
+    2300040: Sphere_001
+    2300042: Wagon
+    3300000: Cone_001
+    3300002: Crystal_Ball
+    3300004: Crystal_Ball_Holder
+    3300006: Cube
+    3300008: Cube_001
+    3300010: Cube_002
+    3300012: Cube_003
+    3300014: Cylinder
+    3300016: Cylinder_001
+    3300018: Cylinder_002
+    3300020: Cylinder_003
+    3300022: Cylinder_004
+    3300024: Cylinder_005
+    3300026: Lantern
+    3300028: Lantern_001
+    3300030: Lantern_002
+    3300032: Potion
+    3300034: Potion_002
+    3300036: Potion_005
+    3300038: Sphere
+    3300040: Sphere_001
+    3300042: Wagon
+    4300000: Sphere
+    4300002: Cylinder_005
+    4300004: Cube
+    4300006: Cube_001
+    4300008: Cylinder_004
+    4300010: Wagon
+    4300012: Lantern_002
+    4300014: Lantern_001
+    4300016: Lantern
+    4300018: Cylinder_003
+    4300020: Cylinder_002
+    4300022: Cylinder_001
+    4300024: Cylinder
+    4300026: Cube_002
+    4300028: Cone_001
+    4300030: Sphere_001
+    4300032: Cube_003
+    4300034: Crystal_Ball_Holder
+    4300036: Crystal_Ball
+    4300038: Potion
+    4300040: Potion_002
+    4300042: Potion_005
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

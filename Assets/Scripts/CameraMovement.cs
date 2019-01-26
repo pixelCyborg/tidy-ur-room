@@ -18,7 +18,7 @@ public class CameraMovement : MonoBehaviour
     bool hasRotated = false;
 
     public Ease ease = Ease.InOutExpo;
-    public float moveTime = 0.2f;
+    public float moveTime = 0.5f;
 
     public BoxCollider fitObject;
     public float fitMultiplier = 2.0f;
