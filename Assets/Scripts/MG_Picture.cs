@@ -71,6 +71,8 @@ public class MG_Picture : MinigameBase
             CompleteButton.instance.Show();
         }
 
+        if (steady) CompleteButton.instance.Show();
+
     }
 
     public void LeftTilt()

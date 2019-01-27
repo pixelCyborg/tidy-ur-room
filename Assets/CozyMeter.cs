@@ -16,7 +16,7 @@ public class CozyMeter : MonoBehaviour
     void Start()
     {
         instance = this;
-        currentCoziness = 0;
+        currentCoziness = 0; 
         origWidth = cozinessMeter.sizeDelta.x;
     }
 
@@ -33,5 +33,6 @@ public class CozyMeter : MonoBehaviour
 
     public void AddMeter(float percentage) {
         currentCoziness += percentage * 0.01f;
+        if (currentCoziness >= 1.0f) EndText.instance.ShowEndText();
     }
 }

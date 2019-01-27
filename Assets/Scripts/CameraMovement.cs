@@ -105,6 +105,23 @@ public class CameraMovement : MonoBehaviour
                 }
             }
         }
+
+        if(Input.GetKeyDown(KeyCode.LeftArrow)) {
+            OnHorizontalMove.Invoke(-1);
+            rotating = true;
+            horizontal.DOLocalRotate(Vector3.up * 90 * (vertical.eulerAngles.x < 0 || vertical.eulerAngles.x > 180 ? -1 : 1), moveTime, RotateMode.LocalAxisAdd).SetEase(ease).OnComplete(() => { rotating = false; });
+            hasRotated = true;
+            return true;
+        }
+        if(Input.GetKeyDown(KeyCode.RightArrow)) {
+            //Debug.Log("Right");
+            OnHorizontalMove.Invoke(1);
+            rotating = true;
+            horizontal.DOLocalRotate(-Vector3.up * 90 * (vertical.eulerAngles.x < 0 || vertical.eulerAngles.x > 180 ? -1 : 1), moveTime, RotateMode.LocalAxisAdd).SetEase(ease).OnComplete(() => { rotating = false; });
+            hasRotated = true;
+            return true;
+        }
+
         return false;
     }
 
