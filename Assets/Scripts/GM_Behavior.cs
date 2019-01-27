@@ -176,6 +176,7 @@ public class GM_Behavior : MonoBehaviour
         MinigameText.instance.MinigameFinished();
         LoadFader.instance.FadeIn(() =>
         {
+            CozyMeter.instance.AddMeter(25f);
             currentMG = Minigames.None;
             SceneManager.UnloadSceneAsync(currentMGScene);
             LoadFader.instance.FadeOut();

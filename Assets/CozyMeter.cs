@@ -6,15 +6,18 @@ using DG.Tweening;
 
 public class CozyMeter : MonoBehaviour
 {
-    public CozyMeter instance;
-    public RectTransform cozinessMeter; 
+    public static CozyMeter instance;
+    public RectTransform cozinessMeter;
+    public Text text;
     float origWidth;
     float currentCoziness;
 
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
         currentCoziness = 0;
+        origWidth = cozinessMeter.sizeDelta.x;
     }
 
     // Update is called once per frame
@@ -25,5 +28,10 @@ public class CozyMeter : MonoBehaviour
         sizeDelta.x = currentWidth;
 
         cozinessMeter.sizeDelta = Vector2.Lerp(cozinessMeter.sizeDelta, sizeDelta, Time.deltaTime * 3.0f);
+        text.text = "COZINESS: " + (currentCoziness * 100.0f) + "%";
+    }
+
+    public void AddMeter(float percentage) {
+        currentCoziness += percentage * 0.01f;
     }
 }
