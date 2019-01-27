@@ -43,8 +43,11 @@ public class InteractablesBase : MonoBehaviour
 
     public virtual void Interact()
     {
-            // Play animation if exists
-            // Play Sound if exists
-            // Tell GM to begin minigame
+        // Play animation if exists
+        // Play Sound if exists
+        if (mySound.clip)
+        {
+            mySound.Play();
+        }
     }
 }
