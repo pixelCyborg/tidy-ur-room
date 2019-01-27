@@ -66,8 +66,6 @@ public class GM_Behavior : MonoBehaviour
 
         if (currentMG == Minigames.None)
         {
-            ray = Cam.ScreenPointToRay(Input.mousePosition);
-
             if (Physics.Raycast(ray, out hit, rayDist))
             {
                 if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -117,13 +115,6 @@ public class GM_Behavior : MonoBehaviour
         }
         else if (currentMG == Minigames.Fireplace)
         {
-            if (Physics.Raycast(ray, out hit, rayDist))
-            {
-                if (Input.GetMouseButtonUp(0))
-                {
-
-                }
-            }
         }
         else if (currentMG == Minigames.Vacuum)
         {
