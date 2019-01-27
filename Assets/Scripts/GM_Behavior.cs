@@ -19,6 +19,13 @@ public class GM_Behavior : MonoBehaviour
     private RaycastHit hit;
     [HideInInspector]
     public Ray ray;
+    [HideInInspector]
+    public RaycastHit[] allHits;
+
+    public const string DISHES = "DishesMG";
+    public const string FIREPLACE = "FireplaceMG";
+    public const string PICTURE = "PictureMG";
+    public const string VACUUM = "VacuumMG";
 
     public enum Minigames
     {
@@ -26,10 +33,12 @@ public class GM_Behavior : MonoBehaviour
         Dishes,
         Cleaning,
         Picture,
-        Fireplace
+        Fireplace,
+        Vacuum
     }
 
     public Minigames currentMG;
+    private string currentMGScene;
 
     void Start()
     {
@@ -53,6 +62,7 @@ public class GM_Behavior : MonoBehaviour
     {
         Debug.DrawLine(ray.origin, ray.GetPoint(rayDist), Color.blue);
         ray = Cam.ScreenPointToRay(Input.mousePosition);
+        allHits = Physics.RaycastAll(ray);
 
         if (currentMG == Minigames.None)
         {
@@ -62,15 +72,15 @@ public class GM_Behavior : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
-                    print(hit.collider);
+                    //print(hit.collider);
 
                     if (lastInteracted)
                     {
-                        lastInteracted.SendMessage("Deselect");
+                        lastInteracted.SendMessage("Deselect", SendMessageOptions.DontRequireReceiver);
                     }
 
                     lastInteracted = hit.collider.gameObject;
-                    lastInteracted.SendMessage("OnSelected");
+                    lastInteracted.SendMessage("OnSelected", SendMessageOptions.DontRequireReceiver);
                 }
             }
         }
@@ -81,11 +91,11 @@ public class GM_Behavior : MonoBehaviour
 
                 if (Input.GetKey(KeyCode.Mouse0))
                 {
-                    print(hit.collider);
+                    //print(hit.collider);
 
                     if (hit.collider.tag == "Dishes")
                     {
-                        hit.collider.gameObject.SendMessage("Clean");
+                        hit.collider.gameObject.SendMessage("Clean", SendMessageOptions.DontRequireReceiver);
                     }
                 }
             }
@@ -100,22 +110,77 @@ public class GM_Behavior : MonoBehaviour
 
                     //if (hit.collider.tag == "Dishes")
                     //{
-                    //    hit.collider.gameObject.SendMessage("Clean");
+                    //    hit.collider.gameObject.SendMessage("Clean, SendMessageOptions.DontRequireReceiver");
                     //}
                 }
             }
         }
-        else if (currentMG==Minigames.Fireplace) {
-            if (Physics.Raycast(ray, out hit, rayDist)) {
-                if(Input.GetMouseButtonUp(0)) {
-                    
+        else if (currentMG == Minigames.Fireplace)
+        {
+            if (Physics.Raycast(ray, out hit, rayDist))
+            {
+                if (Input.GetMouseButtonUp(0))
+                {
+
                 }
             }
         }
+        else if (currentMG == Minigames.Vacuum)
+        {
+
+        }
     }
 
-    public void BeginMG(string _MG)
+    public void BeginMG(Minigames minigame)
     {
-        SceneManager.LoadScene(_MG, LoadSceneMode.Additive);
+        string minigameScene = "";
+        string title = "";
+        string description = "";
+
+        switch(minigame)
+        {
+            case Minigames.Dishes:
+                minigameScene = DISHES;
+                title = "Wash your dishes";
+                description = "Clean to clean off spots";
+                break;
+            case Minigames.Picture:
+                minigameScene = PICTURE;
+                title = "Straighten the photo";
+                description = "Use the buttons to adjust the photo's rotation";
+                break;
+            case Minigames.Vacuum:
+                minigameScene = VACUUM;
+                title = "Vacuum the carpet";
+                description = "Move the cursor to vacuum up junk";
+                break;
+            case Minigames.Fireplace:
+                minigameScene = FIREPLACE;
+                title = "Light the fireplace";
+                description = "Click and drag to move objects into the fireplace";
+                break;
+        }
+
+        currentMG = minigame;
+        currentMGScene = minigameScene;
+
+        LoadFader.instance.FadeIn(() => {
+            SceneManager.LoadScene(minigameScene, LoadSceneMode.Additive);
+            MinigameText.instance.DisplayInstructions(title, description);
+            LoadFader.instance.FadeOut();
+        });
+    }
+
+    public void CompleteMinigame()
+    {
+        MinigameText.instance.MinigameFinished();
+        LoadFader.instance.FadeIn(() =>
+        {
+            currentMG = Minigames.None;
+            SceneManager.UnloadSceneAsync(currentMGScene);
+            LoadFader.instance.FadeOut();
+            MinigameText.instance.HideFinishedText();
+            CompleteButton.instance.Hide();
+        });
     }
 }

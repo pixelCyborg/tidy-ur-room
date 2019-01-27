@@ -9,4 +9,13 @@ public class FireplaceObject : MonoBehaviour
     }
 
     public Type type;
+    public bool activated = false;
+
+    private void Start()
+    {
+        GetComponent<Pickup>().OnPickup.AddListener(() =>
+        {
+            activated = true;
+        });
+    }
 }

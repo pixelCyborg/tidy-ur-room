@@ -5,10 +5,12 @@ using UnityEngine;
 //Just a simple script to enable/disable a wall for "occlusion"
 public class Wall : MonoBehaviour
 {
+    int defaultLayer;
     private Renderer renderer;
 
     private void Start()
     {
+        defaultLayer = gameObject.layer;
         renderer = GetComponent<Renderer>();
     }
 
@@ -16,14 +18,16 @@ public class Wall : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Occluder") {
-            renderer.enabled = false;
+            gameObject.layer = 12;
+            //renderer.enabled = false;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if(other.tag == "Occluder") {
-            renderer.enabled = true;
+            gameObject.layer = defaultLayer;
+            //renderer.enabled = true;
         }
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MG_Hand : MonoBehaviour
 {
+    public Camera eventCamera;
     MG_Hand instance;
     Vector2 oldPos = Vector2.zero;
     Pickup currentlyHeldObject;
@@ -18,7 +19,7 @@ public class MG_Hand : MonoBehaviour
     {
         Vector2 moveDist = oldPos - (Vector2)transform.position;
         Vector3 origPos = transform.position;
-        Vector3 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 targetPos = eventCamera.ScreenToWorldPoint(Input.mousePosition);
         targetPos.z = origPos.z;
         transform.position = targetPos;
 

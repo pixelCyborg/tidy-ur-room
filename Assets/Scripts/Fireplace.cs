@@ -14,6 +14,7 @@ public class Fireplace : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collider) {
         FireplaceObject obj = collider.transform.GetComponent<FireplaceObject>();
+        if (obj.activated == false) return;
         if(obj != null) {
             switch(obj.type) {
                 case FireplaceObject.Type.Wood:
@@ -26,9 +27,12 @@ public class Fireplace : MonoBehaviour
         }
 
         ingredients++;
-        Destroy(obj.gameObject);
+        //Destroy(obj.gameObject);
+        Destroy(obj.GetComponent<Pickup>());
+        Destroy(obj);
         if(ingredients >= 3) {
             Light();
+            CompleteButton.instance.Show();
         }
     }
 

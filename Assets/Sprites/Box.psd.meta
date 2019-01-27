@@ -1,9 +1,7 @@
 fileFormatVersion: 2
-guid: c84a207518bb321428a6753b1d3463eb
+guid: 259197a4ed2e79146b96b42084cf22a6
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: VacuumMinigame_0
-    21300002: VacuumMinigame_1
+  fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -42,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -84,51 +82,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: VacuumMinigame_0
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 44
-        width: 64
-        height: 940
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6a9d7ee55fd1e214b84954d2ba018c48
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: VacuumMinigame_1
-      rect:
-        serializedVersion: 2
-        x: 543
-        y: 768
-        width: 320
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2928960421f712b459eee6ed77899713
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 9564b27fd8c67f340a9046bef0ba387f
+    spriteID: 
     vertices: []
     indices: 
     edges: []

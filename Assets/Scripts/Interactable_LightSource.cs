@@ -7,6 +7,7 @@ public class Interactable_LightSource : InteractablesBase
     Light[] lights;
 
     void Start() {
+        base.Start();
         lights = GetComponentsInChildren<Light>();
         for (int i = 0; i < lights.Length; i++) {
             lights[i].enabled = false;

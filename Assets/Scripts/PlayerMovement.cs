@@ -16,13 +16,16 @@ public class PlayerMovement : MonoBehaviour
     //Raycast at the mouse position, grabbing only colliders assigned to the navmesh layer
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (GM_Behavior.instance.currentMG == GM_Behavior.Minigames.None)
         {
-            RaycastHit[] hits = Physics.RaycastAll(Camera.main.ScreenPointToRay(Input.mousePosition), 100f, navMeshMask);
-            for(int i = 0; i < hits.Length; i++)
+            if (Input.GetMouseButtonDown(0))
             {
-                //Set the destination for our agent to go
-                agent.SetDestination(hits[i].point);
+                RaycastHit[] hits = Physics.RaycastAll(Camera.main.ScreenPointToRay(Input.mousePosition), 100f, navMeshMask);
+                for (int i = 0; i < hits.Length; i++)
+                {
+                    //Set the destination for our agent to go
+                    agent.SetDestination(hits[i].point);
+                }
             }
         }
     }

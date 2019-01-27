@@ -505,6 +505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cam: {fileID: 0}
+  cursorObj: {fileID: 0}
   currentMG: 0
 --- !u!4 &1469095470
 Transform:
@@ -806,7 +807,7 @@ Camera:
   field of view: 21
   orthographic: 1
   orthographic size: 8
-  m_Depth: -1
+  m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 1056
