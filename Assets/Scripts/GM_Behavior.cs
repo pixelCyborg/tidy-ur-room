@@ -4,22 +4,27 @@ using UnityEngine;
 
 public class GM_Behavior : MonoBehaviour
 {
+    //Create a reference to this object that we can access from anywhere
+    public static GM_Behavior instance;
 
     private int rayDist = 30;
 
     public Camera Cam;
 
+    public Transform cursorObj;
     private GameObject lastInteracted;
 
     private RaycastHit hit;
-    private Ray ray;
+    [HideInInspector]
+    public Ray ray;
 
     public enum Minigames
     {
         None,
         Dishes,
         Cleaning,
-        Picture
+        Picture,
+        Fireplace
     }
 
     public Minigames currentMG;
@@ -27,6 +32,7 @@ public class GM_Behavior : MonoBehaviour
     void Start()
     {
         Cam = Camera.main;
+        instance = this;
     }
 
 
@@ -83,6 +89,12 @@ public class GM_Behavior : MonoBehaviour
         {
             
         }
-
+        else if (currentMG==Minigames.Fireplace) {
+            if (Physics.Raycast(ray, out hit, rayDist)) {
+                if(Input.GetMouseButtonUp(0)) {
+                    
+                }
+            }
+        }
     }
 }

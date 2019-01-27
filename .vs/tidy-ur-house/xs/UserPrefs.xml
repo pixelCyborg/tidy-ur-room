@@ -1,10 +1,16 @@
 ﻿<Properties StartupConfiguration="{829F8AA8-1A11-7CD4-1709-FC89EDC771FA}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Wall.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Fireplace.cs">
     <Files>
-      <File FileName="Assets/Scripts/CameraMovement.cs" Line="59" Column="6" />
-      <File FileName="Assets/Scripts/CharacterFollow.cs" Line="5" Column="70" />
+      <File FileName="Assets/Scripts/CameraMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/CharacterFollow.cs" Line="5" Column="60" />
       <File FileName="Assets/Scripts/SetRenderQueue.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Wall.cs" Line="5" Column="48" />
+      <File FileName="Assets/Scripts/Wall.cs" Line="12" Column="45" />
+      <File FileName="Assets/Scripts/Interactable_Fireplace.cs" Line="10" Column="6" />
+      <File FileName="Assets/Scripts/GM_Behavior.cs" Line="95" Column="21" />
+      <File FileName="Assets/Scripts/Pickup.cs" Line="36" Column="59" />
+      <File FileName="Assets/Scripts/MG_Hand.cs" Line="32" Column="14" />
+      <File FileName="Assets/FireplaceObject.cs" Line="11" Column="22" />
+      <File FileName="Assets/Fireplace.cs" Line="9" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
