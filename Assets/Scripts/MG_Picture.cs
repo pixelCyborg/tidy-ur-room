@@ -1,47 +1,76 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MG_Picture : MinigameBase
 {
+    private bool steady = false;
+
     public float level;
     public float adjustRate = 0;
+    public float timer = 5;
 
-    private int minTilt = 60;
-    private int maxTilt = 120;
+    private int minTilt = 30;
+    private int maxTilt = -30;
 
-    public Collider left;
-    public Collider right;
+    public SpriteRenderer feedback;
+
+    public Rigidbody2D rb;
 
     void Start()
     {
         base.Start();
-        //level = Random.Range(minTilt, maxTilt);
+        rb.MoveRotation(Random.Range(minTilt, maxTilt));
+        rb = GetComponent<Rigidbody2D>();
     }
 
 
     void Update()
     {
-        if (transform.eulerAngles.x < minTilt)
+        //level = transform.eulerAngles.x;
+        rb.MoveRotation(rb.rotation + adjustRate * Time.fixedDeltaTime);
+
+        //rb.angularVelocity += adjustRate;
+
+        print(steady);
+
+        if (adjustRate > 0)
         {
-            Vector3 targetRot = transform.rotation.eulerAngles;
-            targetRot = new Vector3(minTilt, transform.rotation.y, transform.rotation.z);
-            transform.rotation = Quaternion.Euler(targetRot);
-            adjustRate = 0;
+            adjustRate -= 0.5f * Time.deltaTime;
         }
-        else if (transform.eulerAngles.x > maxTilt)
+        else if (adjustRate < 0)
         {
-            Vector3 targetRot = new Vector3(maxTilt, transform.rotation.y, transform.rotation.z);
-            targetRot.x = maxTilt;
-            transform.rotation = Quaternion.Euler(targetRot);
-            adjustRate = 0;
+            adjustRate += 0.5f * Time.deltaTime;
+        }
+
+        if (transform.eulerAngles.z > -2 && transform.eulerAngles.z < 2)
+        {
+            steady = true;
         }
         else
         {
-            Vector3 targetRot = transform.rotation.eulerAngles;
-            targetRot.x = level + adjustRate * Time.deltaTime;
-            transform.rotation = Quaternion.Euler(targetRot);
+            steady = false;
         }
+
+        if (steady)
+        {
+            timer -= 1 * Time.deltaTime;
+            feedback.color = Color.green;
+        }
+        else
+        {
+            timer = 5;
+            feedback.color = Color.red;
+        }
+
+        if (timer <= 0)
+        {
+            adjustRate = 0;
+            rb.MoveRotation(0);
+            CompleteButton.instance.Show();
+        }
+
     }
 
     public void LeftTilt()
