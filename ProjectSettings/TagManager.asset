@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Occluder
   - Interactable
+  - Dishes
   layers:
   - Default
   - TransparentFX

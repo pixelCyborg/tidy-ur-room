@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GM_Behavior : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class GM_Behavior : MonoBehaviour
 
     public Camera Cam;
 
+    private GameObject MG_Cam;
     private GameObject lastInteracted;
 
     private RaycastHit hit;
@@ -27,6 +29,7 @@ public class GM_Behavior : MonoBehaviour
     void Start()
     {
         Cam = Camera.main;
+        MG_Cam = GameObject.Find("MG Cam");
     }
 
 
@@ -47,6 +50,8 @@ public class GM_Behavior : MonoBehaviour
 
         if (currentMG == Minigames.None)
         {
+            ray = Cam.ScreenPointToRay(Input.mousePosition);
+
             if (Physics.Raycast(ray, out hit, rayDist))
             {
                 if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -63,11 +68,11 @@ public class GM_Behavior : MonoBehaviour
                 }
             }
         }
-
-        if (currentMG == Minigames.Dishes)
+        else if (currentMG == Minigames.Dishes)
         {
             if (Physics.Raycast(ray, out hit, rayDist))
             {
+
                 if (Input.GetKey(KeyCode.Mouse0))
                 {
                     print(hit.collider);
@@ -79,10 +84,25 @@ public class GM_Behavior : MonoBehaviour
                 }
             }
         }
-        else if (currentMG== Minigames.Picture)
+        else if (currentMG == Minigames.Picture)
         {
-            
-        }
+            if (Physics.Raycast(ray, out hit, rayDist, 1, QueryTriggerInteraction.Collide))
+            {
+                if (Input.GetKey(KeyCode.Mouse0))
+                {
+                    print(hit.collider);
 
+                    //if (hit.collider.tag == "Dishes")
+                    //{
+                    //    hit.collider.gameObject.SendMessage("Clean");
+                    //}
+                }
+            }
+        }
+    }
+
+    public void BeginMG(string _MG)
+    {
+        SceneManager.LoadScene(_MG, LoadSceneMode.Additive);
     }
 }
