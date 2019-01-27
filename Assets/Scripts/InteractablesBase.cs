@@ -45,7 +45,7 @@ public class InteractablesBase : MonoBehaviour
     {
         // Play animation if exists
         // Play Sound if exists
-        if (mySound.clip)
+        if (mySound != null && mySound.clip)
         {
             mySound.Play();
         }
