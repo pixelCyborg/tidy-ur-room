@@ -3,10 +3,10 @@
     <Files>
       <File FileName="Assets/Scripts/CameraMovement.cs" Line="111" Column="29" />
       <File FileName="Assets/Scripts/CharacterFollow.cs" Line="5" Column="60" />
-      <File FileName="Assets/CozyMeter.cs" Line="14" Column="5" />
       <File FileName="Assets/Scripts/CompleteButton.cs" Line="10" Column="23" />
-      <File FileName="Assets/Scripts/GM_Behavior.cs" Line="163" Column="6" />
-      <File FileName="Assets/Scripts/MG_Picture.cs" Line="35" Column="9" />
+      <File FileName="Assets/Scripts/GM_Behavior.cs" Line="100" Column="45" />
+      <File FileName="Assets/Scripts/MG_Picture.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MinigameText.cs" Line="39" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
