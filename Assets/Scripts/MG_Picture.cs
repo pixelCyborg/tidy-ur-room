@@ -44,7 +44,7 @@ public class MG_Picture : MinigameBase
             adjustRate += 0.5f * Time.deltaTime;
         }
 
-        if (transform.eulerAngles.z > -2 && transform.eulerAngles.z < 2)
+        if (transform.eulerAngles.z > -3 && transform.eulerAngles.z < 3)
         {
             steady = true;
         }

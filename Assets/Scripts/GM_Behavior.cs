@@ -91,10 +91,7 @@ public class GM_Behavior : MonoBehaviour
                 {
                     //print(hit.collider);
 
-                    if (hit.collider.tag == "Dishes")
-                    {
-                        hit.collider.gameObject.SendMessage("Clean", SendMessageOptions.DontRequireReceiver);
-                    }
+
                 }
             }
         }
