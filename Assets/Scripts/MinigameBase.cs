@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class MinigameBase : MonoBehaviour
 {
@@ -9,30 +10,28 @@ public class MinigameBase : MonoBehaviour
     private float MaxDirtiness = 100;
     public float dirtiness = 100;
 
-    public GameObject[] dirt;
+    public Transform[] stage;
+
+
     public GameObject GM;
 
     public virtual void Start()
     {
         GM = GameObject.Find("GM"); 
-        dirt = GameObject.FindGameObjectsWithTag("Dirt");
     }
 
-    public virtual void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (dirtiness <=0)
-        {
-            GM.SendMessage("DishesDone");
-        }
+        //Clean gunk that we come into contact with
     }
 
-    public virtual void Clean()
+    public void BeginWash()
     {
-        dirtiness -= cleanRate * Time.deltaTime;
+        transform.Translate(stage[1].position);
+    }
 
-        if (dirtiness < MaxDirtiness /dirt.Length)
-        {
-            dirt[0].SetActive(false);
-        }
+    public void EndWash()
+    {
+        transform.Translate(stage[2].position);
     }
 }

@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class Gunk : MonoBehaviour
 {
+    private SpriteRenderer image;
+
     public void Clean() {
         Destroy(gameObject);
+    }
+
+    public void Fade(float scrub)
+    {
+        
     }
 }
